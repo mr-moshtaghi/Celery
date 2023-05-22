@@ -4,4 +4,5 @@ result_serializer = 'json'
 timezone = 'asia/Tehran'
 enable_utc = True
 broker_url = "amqp://localhost"
-result_backend = "rpc://"
+# result_backend = "rpc://"
+result_backend = "redis://localhost'"

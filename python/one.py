@@ -2,14 +2,13 @@ from time import sleep
 
 from celery import Celery
 
-app = Celery('one', broker="amqp://localhost")
+app = Celery('one', broker="redis://127.0.0.1", backend="redis://127.0.0.1")
 
 app.config_from_object('conf')
 
 
 @app.task
 def add(x, y):
-    sleep(5)
     return x + y
 
 
